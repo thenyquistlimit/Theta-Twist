@@ -1,0 +1,33 @@
+apply plugin: 'com.android.application'
+
+android {
+    signingConfigs {
+    }
+    compileSdkVersion 20
+    buildToolsVersion '20.0.0'
+    defaultConfig {
+        applicationId "com.example.jason.theta_twist"
+        minSdkVersion 14
+        targetSdkVersion 20
+        versionCode 2
+        versionName "1.1"
+    }
+    buildTypes {
+        release {
+            runProguard false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+        }
+    }
+    productFlavors {
+        demo {
+            packageName "com.nyquistlimitlabs.thetatwist"
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile files('libs/processing-core.jar')
+    compile files('libs/controlP5.jar')
+}
